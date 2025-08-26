@@ -33,6 +33,31 @@ public class MainClass {
 		
 		myCalculator.addition();
 		
+		System.out.println("==========================================");
+		
+//		StudentInfo studentInfo = new StudentInfo();
+//		StudentDto studentDto1 = new StudentDto();
+//		studentDto1.setName("홍길동");
+//		studentDto1.setAge(17);
+//		studentDto1.setGradeNum("4");
+//		studentDto1.setClassNum("5");
+//		
+//		StudentDto studentDto2 = new StudentDto();
+//		studentDto2.setName("이순신");
+//		studentDto2.setAge(20);
+//		studentDto2.setGradeNum("3");
+//		studentDto2.setClassNum("7");
+		
+		//스프링 컨테이너에서 객체 주입받기(IoC)
+		StudentInfo studentInfo1 = ctx.getBean("studentInfo1", StudentInfo.class);
+		StudentInfo studentInfo2 = ctx.getBean("studentInfo2", StudentInfo.class);
+		
+		//studentInfo1.setStudentDto(studentDto1); //setter로 초기화		
+		studentInfo1.printStudentIfno();
+		
+		//StudentInfo studentInfo2 = new StudentInfo(studentDto2); //생성자로 초기화
+		studentInfo2.printStudentIfno();
+		
 		
 		
 	}
